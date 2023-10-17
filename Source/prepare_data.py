@@ -4,14 +4,16 @@ from import_data import *
 def preprocess_data(dataframe):
     # Removes incomplete record in last row of 9th month
     dataframe["9 months"] = dataframe["9 months"].iloc[:-1]
-
     # Removes incomplete records in last 3 rows of 12th month
     dataframe["12 months"] = dataframe["12 months"].iloc[:-3]
     return dataframe
 
+def get_data_df(mode):
+    df = get_data(mode)
+    return preprocess_data(df)
+
 def get_label_freq(bootstrap=False):
-    df = get_data("label")
-    df = preprocess_data(df)
+    df = get_data_df("label")
 
     x = []
     for i in range(len(timesteps)):
