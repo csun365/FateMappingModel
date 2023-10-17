@@ -1,4 +1,4 @@
 Results/
 .DS_Store
-Source/__pycache__
-Scripts/__pycache__
+Source/__pycache__/
+Scripts/__pycache__/
