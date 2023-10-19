@@ -1,5 +1,7 @@
 # FateMappingModel
 
+Stem cell fate mapping model that calculates the residence times, differentiation rates, and proliferation rates along a lineage hierarchy
+
 Sources:
 
 [Paper](https://www.nature.com/articles/nature14242)
