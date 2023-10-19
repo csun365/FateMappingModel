@@ -18,9 +18,6 @@ lineage_dict = {"LT-HSC": ["ST-HSC"],
                 "DNT": ["DPT"],
                 "DPT": ["CD4+T", "CD8+T"]}
 
-# Includes all species whose reference species is defined in the model
-beta_upstream_lineage = ["ST-HSC", "MPP", "CLP", "CMP", "proB", "DNT", "DPT",]
-
 # Month to days
 month_to_days = 30.436875
 
