@@ -23,7 +23,7 @@ def compute_counts_ratio(reference, upstream, mode):
     df_raw = get_data_df("raw")
     
     # error in cell counts
-    df_raw.loc[4, "CMP"] = 0
+    df_raw["2 months"].loc[4, "CMP"] = 0
 
     ratios = []
     for i in timesteps:

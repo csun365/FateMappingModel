@@ -11,7 +11,7 @@ from calculate_raw_counts import *
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--bootstrap", help="apply bootstrapping to the data (e.g. for confidence interval)")
-parser.add_argument("--save", help="0 (False) or 1 (True) representing whether to save results (automaticall 1 with boostrapping)")
+parser.add_argument("--save", help="0 (False) or 1 (True) representing whether to save results (automatically 1 with boostrapping)")
 cmdline_args = parser.parse_args()
 
 num_bootstraps = None
