@@ -21,6 +21,10 @@ def compute_total_counts_median(compartment):
 def compute_counts_ratio(reference, upstream, mode):
     df_label = get_data_df("label")
     df_raw = get_data_df("raw")
+    
+    # error in cell counts
+    df_raw.loc[4, "CMP"] = 0
+
     ratios = []
     for i in timesteps:
         ratios.append(((df_raw[i][reference] / df_label[i][reference]) / (df_raw[i][upstream] / df_label[i][upstream])).tolist())
