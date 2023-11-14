@@ -11,8 +11,8 @@ def compute_total_counts_median(compartment):
     lst = []
     for i in timesteps:
         temp = (raw_label_counts[i][compartment] / label_frequency[i][compartment]).replace(np.inf, np.nan).dropna()
-   s for j in range(temp.shape[0]):
-        lst.append(temp.iloc[j])
+        for j in range(temp.shape[0]):
+            lst.append(temp.iloc[j])
     # plt.hist(lst,bins=20)
     # plt.show()
     return np.median(lst) * 100
