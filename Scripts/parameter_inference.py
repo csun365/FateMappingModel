@@ -21,11 +21,15 @@ save_bool = False
 if cmdline_args.save:
     save_bool = bool(cmdline_args.save)
 
+def print_dict(dict):
+    for key, value in dict.items():
+        print(str(key) + ":\t\t" + str(value))
+
 # Tau Calculation
 taus, _ = run_model(num_bootstraps, save_output=save_bool)
 taus_dict = {lineage[i + 1]: taus[i] for i in range(len(taus))}
 print("\nTaus:")
-print(taus_dict)
+print_dict(taus_dict)
 
 # Count Ratios Calculation
 count_ratios_dict = {}
@@ -33,7 +37,7 @@ for key, value in lineage_dict.items():
     for reference_species in value:
         count_ratios_dict[reference_species] = compute_counts_ratio(reference_species, key, "mean")
 print("\nCount Ratios:")
-print(count_ratios_dict)
+print_dict(count_ratios_dict)
 
 # Alpha Calculation
 alpha_dict = {}
@@ -51,6 +55,6 @@ for key, value in lineage_dict.items():
         beta_dict[key] = sum_alphas - 1 / taus_dict[key]
 beta_dict = {**{lineage[0]: list(alpha_dict.values())[0]}, **beta_dict}
 print("\nAlphas:")
-print(alpha_dict)
+print_dict(alpha_dict)
 print("\nBetas:")
-print(beta_dict)
+print_dict(beta_dict)
